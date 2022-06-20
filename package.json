@@ -9,8 +9,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.27.2",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
-    "nodemon": "^2.0.16"
+    "jquery": "^3.6.0",
+    "nodemon": "^2.0.16",
+    "xhr2": "^0.2.1"
   }
 }
