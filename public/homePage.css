@@ -1,0 +1,53 @@
+:root {
+    --backgroundColor: #232828;
+    --textColor: #def0f7;
+    --videoCardColor: #454f4f;
+    --headerColor: #d10823;
+  }
+  
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: var(--backgroundColor);
+}
+
+.videoCard{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 26.8vw;
+    height: 20vw;
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    background-color: var(--videoCardColor);
+}
+.videoCardImage{
+    display: flex;
+    justify-content: center;
+}
+img{
+    width: 22vw;
+    height: 16vw;
+}
+.videoCardData{
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+a{
+    text-decoration: none;
+    color: var(--textColor); 
+}
+body{
+    background-color: var(--backgroundColor);
+}
+.header{
+    color: var(--textColor); 
+    font-size: 8rem;
+    background-color: var(--headerColor);
+    margin-left: 20vw;
+    margin-right: 20vw;
+}
