@@ -70,52 +70,23 @@ router.get('/:page', (req, res) => {
                 })
             })
         })
-})
-router.get('/search/:query',(req,res)=>{
-    var perPage = 9;
-    var page = 1;
-    var query = req.params.query;
+});
+
+router.post('/search',(req,res)=>{
+    var query = req.body.query;
 
     schema.find({
         videoTitle: { $regex: query, $options: "i" }
     })
     .sort({publishTime: -1})
-    .skip((perPage * page) - perPage)
-    .limit(perPage)
     .exec((err, data) => {
-        schema.count().exec((err, count) => {
-            if (err) return next(err)
-            res.render('homePage', {
+        
+        res.render('searchPage', {
                 data: data,
-                current: page,
-                pages: Math.ceil(count / perPage)
-            })
+                query: query
         })
-    });
-    
-})
-router.get('/search/:query/:page',(req,res)=>{
-    var perPage = 9;
-    var page = req.params.page || 1;
-    var query = req.params.query;
-
-    schema.find({
-        videoTitle: { $regex: query, $options: "i" }
-    })
-    .sort({publishTime: -1})
-    .skip((perPage * page) - perPage)
-    .limit(perPage)
-    .exec((err, data) => {
-        schema.count().exec((err, count) => {
-            if (err) return next(err)
-            res.render('homePage', {
-                data: data,
-                current: page,
-                pages: Math.ceil(count / perPage)
-            })
-        })
-    });
-})
+    }); 
+});
 
 //Server 
 function saveData(item, iter){

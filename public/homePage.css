@@ -46,17 +46,26 @@ img{
 body{
     background-color: var(--backgroundColor) !important;
 }
-.header{
+.header>center{
     color: var(--textColor); 
     font-size: 8rem;
+    margin-left: 12rem;
+}
+.header{
+    display: flex;
     background-color: var(--headerColor);
     padding-left: 20vw;
     padding-right: 20vw;
+    align-items: center;
+    justify-content: center;
 }
 .pagination>li>a,
 .pagination>li>a:disabled{
     color: #fff !important;
     background: rgb(23, 21, 21) !important;
+}
+.search-box{
+    margin-left: 5rem;
 }
 .card{
     margin-top: 1.5rem;
