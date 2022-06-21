@@ -3,9 +3,11 @@
     --textColor: #def0f7;
     --videoCardColor: #454f4f;
     --headerColor: #d10823;
+    --borderColor: rgb(208, 240, 236);
+    --paginationBackgroundColor:  rgb(57, 49, 48);
   }
   
-.container{
+.container2{
     display: flex;
     flex-wrap: wrap;
     background-color: var(--backgroundColor);
@@ -37,17 +39,41 @@ img{
     padding-left: 2rem;
     padding-right: 2rem;
 }
-a{
+.card-title>center>a{
     text-decoration: none;
     color: var(--textColor); 
 }
 body{
-    background-color: var(--backgroundColor);
+    background-color: var(--backgroundColor) !important;
 }
 .header{
     color: var(--textColor); 
     font-size: 8rem;
     background-color: var(--headerColor);
-    margin-left: 20vw;
-    margin-right: 20vw;
+    padding-left: 20vw;
+    padding-right: 20vw;
+}
+.pagination>li>a,
+.pagination>li>a:disabled{
+    color: #fff !important;
+    background: rgb(23, 21, 21) !important;
+}
+.card{
+    margin-top: 1.5rem;
+    margin-bottom: -0.5rem!important;
+    width: 33vw !important;
+}
+.card-body{
+    justify-content: center !important;
+}
+.card-title{
+    color: var(--textColor);
+    justify-content: center !important;
+    margin-left: 8rem;
+    margin-right: 8rem;
+}
+.pagination>li.active>a {
+    border-color: #fff !important; 
+    color: #fff !important;
+    background: rgb(109, 114, 111) !important;
 }

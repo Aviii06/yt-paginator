@@ -1,29 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="homePage.css">
-    <title>YT-paginator</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="homePage.css">
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <title>YT-paginator</title>
 </head>
+
 <body>
+  <div>
     <div class="header">
-        <center>YT-Paginator</center>
+      <center>YT-Paginator</center>
     </div>
 
-    <div class = "container">
-        <% for(var i=0; i<data.length; i++) {%>
-            <div class = "videoCard">
-                <div class = "videoCardImage">
-                    <img src = <%= data[i].thumbnailURL%>>
-                </div>
-                <div class = "videoCardData">
-                    <a href = <%= data[i].videoURL%>><center><%- data[i].videoTitle%></center></a>
-                </div>
-            </div>
-         <% } %>
+    <div class="container2">
+      <% for(var i=0; i<data.length; i++) {%>
+      <div class="card" style="width: 18rem;">
+        <center>
+            <img src=<%=data[i].thumbnailURL%> class="card-img-top">
+        </center>
+        <div class="card-body">
+          <h5 class="card-title" >
+            <center>
+                <a href=<%=data[i].videoURL%>><%- data[i].videoTitle%></a>
+            </center>
+          </h5>
+        </div>
+      </div>
+      <% } %>
     </div>
-    
+
+    <div class="text-center">
+      <% if (pages> 0) { %>
+      <ul class="pagination text-center">
+        <% if (current==1) { %>
+        <li class="disabled"><a>First</a></li>
+        <% } else { %>
+        <li><a href="/1">First</a></li>
+        <% } %>
+        <% var i=(Number(current)> 5 ? Number(current) - 4 : 1) %>
+        <% if (i !==1) { %>
+        <li class="disabled"><a>...</a></li>
+        <% } %>
+        <% for (; i <=(Number(current) + 4) && i <=pages; i++) { %>
+        <% if (i==current) { %>
+        <li class="active"><a>
+            <%= i %>
+          </a></li>
+        <% } else { %>
+        <li><a href="/<%= i %>">
+            <%= i %>
+          </a></li>
+        <% } %>
+        <% if (i==Number(current) + 4 && i < pages) { %>
+        <li class="disabled"><a>...</a></li>
+        <% } %>
+        <% } %>
+        <% if (current==pages) { %>
+        <li class="disabled"><a>Last</a></li>
+        <% } else { %>
+        <li><a href="/<%= pages %>">Last</a>
+        </li>
+        <% } %>
+      </ul>
+      <% } %>
+    </div>
+  </div>
+
 </body>
+
 </html>

@@ -48,13 +48,28 @@ app.use(express.static(__dirname + '/public'));
 const router = express.Router();
 
 app.use('/',router);
-router.get('/', (req, res) => {
-    schema.find().sort({publishTime: -1}).then(data=>{
-        //data.sort((a,b)=>{return b.publishTime - a.publishTime});
-        console.log(data);
+router.get('/',(req,res)=>{
+    res.redirect('/1');
+})
+router.get('/:page', (req, res) => {
+    var perPage = 9
+    var page = req.params.page || 1
 
-        res.render(`homePage`, {data: data});
-    });
+    schema
+        .find({})
+        .sort({publishTime: -1})
+        .skip((perPage * page) - perPage)
+        .limit(perPage)
+        .exec(function(err, data) {
+            schema.count().exec(function(err, count) {
+                if (err) return next(err)
+                res.render('homePage', {
+                    data: data,
+                    current: page,
+                    pages: Math.ceil(count / perPage)
+                })
+            })
+        })
 })
 router.get('/search',(req,res)=>{
 })
