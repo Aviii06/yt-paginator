@@ -3,6 +3,8 @@ const express = require('express');
 const app = express();
 require('dotenv').config();
 const asyncServer = require('./server/asyncServer');
+var util= require('util');
+var encoder = new util.TextEncoder('utf-8');
 
 //API URL
 const API_KEY = process.env.API_KEY;
