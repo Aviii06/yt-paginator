@@ -20,11 +20,11 @@ function saveData(item) {
         publishTime: time,
     })
 
-    if(process.env.SAVE_TO_DATA == 1){
+    if (process.env.SAVE_TO_DATA == 1) {
         sch.save().then()
-        .catch(err => {
-            console.log(err);
-        });
+            .catch(err => {
+                console.log(err);
+            });
     }
 }
 
@@ -42,11 +42,11 @@ async function deleteAll() {
 }
 
 //This is the main funciton of the server whcih runs over and over.
-exports.main = async function main(url) {
-    console.log('Async Server is working');
-    await axios.get(url).then(res => {
-        let items = res.data.items;
+exports.main = async function main(urls, curr) {
+    console.log('Async Server is running');
 
+    await axios.get(urls[curr]).then(res => {
+        let items = res.data.items;
         for (let item of items) {
             getItem(item).then(data => {
                 if (data.length == 0) {
@@ -55,8 +55,11 @@ exports.main = async function main(url) {
                 }
             });
         }
-    }).catch(err => console.log(err));
+    }).catch(err => {
+        curr++;
+        console.log(err);
+    });
 
     await sleep(dbRefreshRate);
-    main(url);
+    main(urls, curr);
 }

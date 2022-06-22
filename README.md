@@ -10,7 +10,13 @@ Example: `/search/mystery`.
 
 # Setup
 First setup environment variables in `.env`.
-An example file(`.env.example`) has been pushed and could be taken as an example. `SAVE_TO_DATA` and `RUN_ASYNC_SERVER` can be 0 or 1 for off and on respectively.
+
+An example file(`.env.example`) has been pushed and could be taken as an example. 
+
+`SAVE_TO_DATA` and `RUN_ASYNC_SERVER` can be 0 or 1 for off and on respectively.
+
+`API_KEYS` is a comma seperated list for example: `"API_KEY1, API_KEY2, API_KEY3"`.
+
 ## Bare Metal
 ```
 npm install
