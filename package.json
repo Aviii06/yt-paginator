@@ -17,6 +17,7 @@
     "jquery": "^3.6.0",
     "mdb-ui-kit": "^4.2.0",
     "mongoose": "^6.4.0",
+    "node-docker": "^0.0.1",
     "nodemon": "^2.0.16",
     "xhr2": "^0.2.1"
   }

@@ -20,10 +20,12 @@ function saveData(item) {
         publishTime: time,
     })
 
-    sch.save().then()
+    if(process.env.SAVE_TO_DATA == 1){
+        sch.save().then()
         .catch(err => {
             console.log(err);
         });
+    }
 }
 
 //This function gets data from the database.

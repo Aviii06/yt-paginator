@@ -12,7 +12,9 @@ const key_word = 'football';
 url = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=${key_word}&type=video&key=${API_KEY}`;
 
 //Async Server for fetching data from youtube API
-asyncServer.main(url);
+if(process.env.RUN_ASYNC_SERVER == 1){
+    asyncServer.main(url);
+}
 
 //Express configurations
 app.use(express.json()); //Body parser
