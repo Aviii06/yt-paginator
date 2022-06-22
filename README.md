@@ -27,8 +27,9 @@ npm run serve
 ```
 npm install
 docker build --tag node-docker .
-docker run node-docker
+docker run -p 8000:8000 node-docker
 ```
+
 
 # Vhost
 Make sure you've installed [nginx](https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-18-04).
