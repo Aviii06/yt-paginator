@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require('./databaseConnection');
 const schema = mongoose.Schema;
 
 const videoInfoSchema = new schema({
@@ -8,7 +8,6 @@ const videoInfoSchema = new schema({
     },
     description: {
         type: String,
-        required: true
     },
     thumbnailURL: {
         type: String,
@@ -25,4 +24,4 @@ const videoInfoSchema = new schema({
 });
 
 const VideoInfo = mongoose.model('VideoInfo', videoInfoSchema);
-module.exports =VideoInfo;
+module.exports = VideoInfo;

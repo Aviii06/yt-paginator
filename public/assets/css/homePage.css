@@ -1,0 +1,89 @@
+:root {
+  --backgroundColor: #232828;
+  --textColor: #def0f7;
+  --videoCardColor: #454f4f;
+  --headerColor: #d10823;
+  --borderColor: rgb(208, 240, 236);
+  --paginationBackgroundColor: rgb(57, 49, 48);
+  --lightBackgroundColor: rgb(109, 114, 111);
+}
+
+.container2 {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: var(--backgroundColor);
+}
+
+.videoCard {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 26.8vw;
+  height: 20vw;
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  background-color: var(--videoCardColor);
+}
+.videoCardImage {
+  display: flex;
+  justify-content: center;
+}
+img {
+  width: 22vw;
+  height: 16vw;
+}
+.videoCardData {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+.card-title > center > a {
+  text-decoration: none;
+  color: var(--textColor);
+}
+body {
+  background-color: var(--backgroundColor) !important;
+}
+.header > center {
+  color: var(--textColor);
+  font-size: 8rem;
+  margin-left: 12rem;
+}
+.header {
+  display: flex;
+  background-color: var(--headerColor);
+  padding-left: 20vw;
+  padding-right: 20vw;
+  align-items: center;
+  justify-content: center;
+}
+.pagination > li > a,
+.pagination > li > a:disabled {
+  color: var(--textColor) !important;
+  background: var(--backgroundColor) !important;
+}
+.search-box {
+  margin-left: 5rem;
+}
+.card {
+  margin-top: 1.5rem;
+  margin-bottom: -0.5rem !important;
+  width: 33vw !important;
+}
+.card-body {
+  justify-content: center !important;
+}
+.card-title {
+  color: var(--textColor);
+  justify-content: center !important;
+  margin-left: 8rem;
+  margin-right: 8rem;
+}
+.pagination > li.active > a {
+  border-color: var(--borderColor) !important;
+  color: var(--textColor) !important;
+  background: var(--lightBackgroundColor) !important;
+}

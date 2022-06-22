@@ -5,33 +5,35 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/homePage.css">
+  <link rel="stylesheet" href="/css/homePage.css">
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <title>YT-paginator</title>
 </head>
 
 <body>
   <div>
+    <!--     Header     -->
     <div class="header">
       <center>YT-Paginator</center>
       <div class="search-box">
         <form action="/search" method="POST">
-            <input type="text" name="query" placeholder="search...">
-            <input type="submit" value="Search"/>
+          <input type="text" name="query" placeholder="search...">
+          <input type="submit" value="Search" />
         </form>
       </div>
     </div>
 
+    <!--      Card       -->
     <div class="container2">
       <% for(var i=0; i<data.length; i++) {%>
       <div class="card" style="width: 18rem;">
         <center>
-            <img src=<%=data[i].thumbnailURL%> class="card-img-top">
+          <img src=<%=data[i].thumbnailURL%> class="card-img-top">
         </center>
         <div class="card-body">
-          <h5 class="card-title" >
+          <h5 class="card-title">
             <center>
-                <a href=<%=data[i].videoURL%>><%- data[i].videoTitle%></a>
+              <a href=<%=data[i].videoURL%>><%- data[i].videoTitle%></a>
             </center>
           </h5>
         </div>
