@@ -8,6 +8,8 @@ Search API could be used by clicking the search button or using a route `/search
 
 Example: `/search/mystery`.
 
+Search API searches for partials matches in video title or description.
+
 # Setup
 First setup environment variables in `.env`.
 

@@ -56,7 +56,7 @@ exports.main = async function main(urls, curr) {
             });
         }
     }).catch(err => {
-        curr++;
+        curr = (curr + 1)%urls.length;
         console.log(err);
     });
 
