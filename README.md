@@ -1,5 +1,5 @@
 # YT-Paginator
-A MVC based paginator for youtube for a specific search query. [live link](http://ytpaginator.aviii.me/).
+A MVC based paginator for youtube for a specific search query.
 <img width="1440" alt="image" src="https://user-images.githubusercontent.com/45993519/174975901-2b13be52-167b-4562-8205-5f2763b38958.png">
 
 
